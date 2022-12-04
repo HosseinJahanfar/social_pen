@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:social_pen/gen/assets.gen.dart';
-import 'package:social_pen/my_colors.dart';
+
 import 'package:social_pen/view/profile_screen.dart';
 
+import '../component/my_colors.dart';
 import 'home_screen.dart';
 
 class MainScreen extends StatefulWidget {

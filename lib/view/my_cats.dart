@@ -6,10 +6,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:social_pen/gen/assets.gen.dart';
 import 'package:social_pen/models/data_model.dart';
 import 'package:social_pen/models/fake_data.dart';
-import 'package:social_pen/my_component.dart';
-import 'package:social_pen/my_strings.dart';
 
-import '../my_colors.dart';
+import '../component/my_colors.dart';
+import '../component/my_component.dart';
+import '../component/my_strings.dart';
 
 class MyCats extends StatefulWidget {
   const MyCats({super.key});
@@ -84,7 +84,9 @@ class _MyCatsState extends State<MyCats> {
                                     if (!selectedList
                                         .contains(tagList[index])) {
                                       selectedList.add(tagList[index]);
-                                    } else {print("${tagList[index].title} Exist");}
+                                    } else {
+                                      print("${tagList[index].title} Exist");
+                                    }
                                   });
                                 }),
                                 child: MainTags(

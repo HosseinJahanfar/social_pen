@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:social_pen/gen/assets.gen.dart';
-import 'package:social_pen/my_strings.dart';
+
 import 'package:social_pen/view/my_cats.dart';
 import 'package:validators/validators.dart';
+
+import '../component/my_strings.dart';
 
 class RegisterIntro extends StatelessWidget {
   const RegisterIntro({super.key});

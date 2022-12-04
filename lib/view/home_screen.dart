@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../component/my_colors.dart';
+import '../component/my_component.dart';
+import '../component/my_strings.dart';
 import '../gen/assets.gen.dart';
 import '../models/fake_data.dart';
-import '../my_colors.dart';
-import '../my_component.dart';
-import '../my_strings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -26,9 +26,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
         child: Column(
           children: [
-           
             HomePagePoster(size: size, textTheme: textTheme),
-         
             const SizedBox(
               height: 16,
             ),
@@ -36,14 +34,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-         
             SeeMoreBlog(bodyMargin: bodyMargin, textTheme: textTheme),
-
-          
-            HomePageBlogList(size: size, bodyMargin: bodyMargin, textTheme: textTheme),
-        
+            HomePageBlogList(
+                size: size, bodyMargin: bodyMargin, textTheme: textTheme),
             SeeMorePodcast(bodyMargin: bodyMargin, textTheme: textTheme),
-            
             HomePagePodcastList(size: size, bodyMargin: bodyMargin),
             const SizedBox(
               height: 50,
@@ -54,6 +48,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 //!homePagePodcastList
 class HomePagePodcastList extends StatelessWidget {
   const HomePagePodcastList({
@@ -75,8 +70,7 @@ class HomePagePodcastList extends StatelessWidget {
         itemBuilder: (context, index) {
           //*blog item
           return Padding(
-            padding:
-                EdgeInsets.only(right: index == 0 ? bodyMargin : 15),
+            padding: EdgeInsets.only(right: index == 0 ? bodyMargin : 15),
             child: Column(
               children: [
                 SizedBox(
@@ -146,6 +140,7 @@ class SeeMorePodcast extends StatelessWidget {
     );
   }
 }
+
 //!homePageBlogList
 class HomePageBlogList extends StatelessWidget {
   const HomePageBlogList({
@@ -169,8 +164,7 @@ class HomePageBlogList extends StatelessWidget {
         itemBuilder: (context, index) {
           //*blog item
           return Padding(
-            padding:
-                EdgeInsets.only(right: index == 0 ? bodyMargin : 15),
+            padding: EdgeInsets.only(right: index == 0 ? bodyMargin : 15),
             child: Column(
               children: [
                 SizedBox(
@@ -182,8 +176,7 @@ class HomePageBlogList extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           image: DecorationImage(
-                              image: NetworkImage(
-                                  blogList[index].imageUrl),
+                              image: NetworkImage(blogList[index].imageUrl),
                               fit: BoxFit.cover),
                         ),
                         foregroundDecoration: const BoxDecoration(
@@ -200,16 +193,14 @@ class HomePageBlogList extends StatelessWidget {
                         left: 0,
                         right: 0,
                         child: Row(
-                          mainAxisAlignment:
-                              MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
                               blogList[index].writer,
                               style: textTheme.subtitle1,
                             ),
                             Row(
-                              crossAxisAlignment:
-                                  CrossAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
                                   blogList[index].views,
@@ -247,6 +238,7 @@ class HomePageBlogList extends StatelessWidget {
     );
   }
 }
+
 //!seeMoreBlog
 class SeeMoreBlog extends StatelessWidget {
   const SeeMoreBlog({
@@ -301,16 +293,14 @@ class HomePageTagList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.fromLTRB(
-                0, 8, index == 0 ? bodyMargin : 15, 8),
-            child: MainTags(textTheme: textTheme,index:index),
+            padding: EdgeInsets.fromLTRB(0, 8, index == 0 ? bodyMargin : 15, 8),
+            child: MainTags(textTheme: textTheme, index: index),
           );
         },
       ),
     );
   }
 }
-
 
 //!homePagePoster
 class HomePagePoster extends StatelessWidget {
